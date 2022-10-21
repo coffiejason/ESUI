@@ -1,8 +1,27 @@
 import React from 'react'
 
-const League = () => {
+import league from '../assets/images/country-leagues/champions-league.jpg';
+import { useState } from 'react';
+
+const League = (props:any) => {
+  
+
+  console.log(props.leagues)
   return (
-    <div>League</div>
+    <div className='league'>
+      {
+        props.leagues.map((item:any) =>{
+          <>
+            <img src={item.imgurl} />
+           <p>{item.imgurl}</p>
+          </>
+
+        })
+      }
+    <img src={league} />
+    <p>League Name</p>
+
+    </div>
   )
 }
 

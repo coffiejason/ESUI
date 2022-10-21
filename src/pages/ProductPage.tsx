@@ -1,12 +1,19 @@
 import React from 'react'
-import { Header, Nav } from '../components'
+import { Header, Nav, History, PlaceOrder, ItemViewer } from '../components'
+import Form from '../components/Form'
 
 const ProductPage = () => {
   return (
     <>
     <Header />
     <Nav />
-    <div className='product'>Product Page</div>
+    <div className='product-page'>
+      <History />
+      <div className='place-order'>
+        <ItemViewer />
+        <Form />
+      </div>
+    </div>
     </>
   )
 }

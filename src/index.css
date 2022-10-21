@@ -74,29 +74,280 @@ html,body {
 }
 
 /* ------ NAVBAR ------ */
+.navbar-container {
+    width: 100%;
+    height: 88px;
+    background: #F9DC38;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.navbar {
+    width: 89.4%;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+.upper-navbar {
+    height: 63%;
+    display: flex;
+    flex-direction: row;
+}
+.lower-navbar {
+    height: 37%;
+    border: 1px solid #EAEAEC;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ------ UPPER NAVBAR ------ */
+.upper-navbar .cat-select {
+    width: 10%;
+    border: 1px solid #EAEAEC;
+    border-bottom: none;
+    cursor: pointer;
+}
+.upper-navbar .cat-select p{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.04em;
+    /* Black */
+    color: #111112;
+    opacity: 0.9;
+    margin: 20px 0;
+}
+
+.upper-navbar .cat-select img{
+
+}
+.upper-navbar .search-bar-container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.upper-navbar .search-bar-container input[type="text"]{
+    width: 80%;
+    height: 45px;
+    border: none;
+    border-width : 0;
+    border : 0;
+    font-size: 16px;
+    font-weight: 400S;
+    margin-left: 30px;
+    margin-top: auto ;
+    margin-bottom: auto ;
+}
+
+.upper-navbar .search-bar-container input[type="text"]:active,
+.upper-navbar .search-bar-container input[type="text"]:focus,
+.upper-navbar .search-bar-container input[type="text"]:focus-within,
+.upper-navbar .search-bar-container input[type="text"]::-moz-focus-inner,
+.upper-navbar .search-bar-container input[type="text"]::-moz-focus-outer{
+    height: auto;
+    border: none;
+    border-width : 0;
+    border : 0
+
+}
+
+.upper-navbar .search-bar-container .search-button{
+    width: 12%;
+    height: 40px;
+    background: #F9DC38;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+}
+.upper-navbar .search-bar-container .search-button:hover{
+    background: #fae153;
+    cursor: pointer;
+}
+.upper-navbar .search-bar-container .search-button p {
+    margin: auto auto;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.upper-navbar .search-bar-container .search-button .search-button-icon-div {
+    width: 35%;
+    height: 40px;
+    background: #111112;
+}
+
+.upper-navbar .search-bar-container .search-button .search-button-icon-div img {
+    margin: 15px auto;
+
+}
+
+.upper-navbar .cart {
+    width: 10%;
+    border: 1px solid #EAEAEC;
+    border-bottom: none;
+    cursor: pointer;
+}
+.upper-navbar .cart img{
+    width: 20px;
+    height: 20px;
+    margin: 16px 0;
+}
+.upper-navbar .profile {
+    width: 10%;
+    border: 1px solid #EAEAEC;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.upper-navbar .profile img{
+    width: 20px;
+    height: 20px;
+    margin: 16px 0;
+}
+
+/* ------ LOWER NAVBAR ------ */
+.lower-navbar .submenu {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+.lower-navbar .submenu .page-section p{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px auto 4px 8px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.04em;
+    /* Black */
+    color: #111112;
+    cursor: pointer;
+
+}
+
+.lower-navbar .submenu .page-section .page-underline{
+    width: 100%;
+    height: 3px;
+    margin: auto 0;
+    background: #F9DC38;
+    margin: 5px auto 8px 8px;
+}
+
+.page-section-inactive p{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.04em;
+    margin: 8px auto 8px 8px;
+    /* Black */
+    color: #111112;
+    opacity: 0.5;
+    cursor: pointer;
+
+}
 
 /* ------ CAROUSEL ------ */
 .carousel {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 95%;
     height: 400px;
-    margin: 0 auto;
-    background: #7c7c84;
+    margin: 50px auto auto auto;
+    background: linear-gradient(90deg, #111112 0%, rgba(17, 17, 18, 0) 65%),url('./assets/images/hero.jpg');
 }
 
-.carousel img{
-    width: 100%;
-    height: auto;
+.carousel h2{
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    margin: 80px auto 80px 80px;
+    /* or 120% */
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
 }
 
-.carousel .headline_section {
-    z-index: 9;
-    width: 40%;
-    height: 400px;
-    margin: 0 auto;
-    background: #242425;
+.carousel .hero-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel span{
+    color: #FADD18;
+    display: block;
+    text-align: start;
+}
+
+.carousel .nav-buttons{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto auto 80px
+}
+
+.carousel .nav-buttons .active {
+    width: 10%;
+    height: 4px;
+    background: #F9DC38;
+    margin: 80px 3px 80px 3px;
+}
+
+.carousel .nav-buttons .inactive {
+    width: 10%;
+    height: 4px;
+    background: #FFFFFF;
+    opacity: 0.16;
+    margin: 80px 3px 80px 3px;
+}
+
+.carousel .shop-now-button {
+    display: flex;
+    flex-direction: row;
+    width: 140px;
+    height: 40px;
+    justify-content: end;
+    background: rgba(17, 17, 18, 0.4);
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(8px);
+    margin: 60px 80px auto auto
+}
+.carousel .shop-now-button p {
+    color: #fff;
+    margin: auto auto;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.04em;
+}
+
+.carousel .shop-now-icon {
+    width: 43px;
+    height: 40px;
+    text-align: end;
+    margin-right: 0;
+    top: calc(50% - 40px/2);
+    background: #FFFFFF;
+}
+
+.carousel .shop-now-icon img {
+    margin: 12px 12px;
 
 }
+
+/* .carousel .shop-now-icon.hovered,.carousel .shop-now-button:hover {
+    border: 1px solid #f7e166;
+}
+
+.carousel .shop-now-button.hovered, .carousel .shop-now-icon:hover {
+    background: #f7e166;
+} */
+
+
 
 /* ------ FEATURES ------*/
 .features {
@@ -126,20 +377,6 @@ html,body {
     color: #111112;
     margin: 8px auto 32px 32px;
 
-}
-
-.feature .topbox{
-
-}
-
-.feature .sidebox{
-    width: 72px;
-    height: 32px;
-    left: 0px;
-    top: 0px;
-    background: #f8d30766;
-    -ms-transform: skewY(30deg); /* IE 9 */
-    transform: skewY(30deg);
 }
 
 .home .reward{
@@ -235,7 +472,94 @@ html,body {
     width: 257px;
     height: 289px;
     background: #FFFFFF;
-    margin-right: 32px;
+    margin-right: 15px;
+}
+
+.league p{
+    display: flex;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: -0.02em;
+
+    color: #111112;
+}
+
+/* ------ GRID ------ */
+
+/* ------ PERSONAL ------ */
+.personal {
+    width: 90%;
+    height: 500px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    margin: 80px 80px 80px 80px;
+}
+
+.personalize {
+    width: 656px;
+    height: 400px;
+    color: #FFF;
+    background: 0,url('assets/images/personalization.jpg');
+    margin-right: 40px;
+    opacity: 1;
+    text-align: start;
+}
+
+.personalize h2{
+    margin: 216px 379px auto 40px;   
+}
+
+.personalize p{
+    margin: 24px 40px 40px 40px;
+    text-align: start;
+    /* line-height: 24px; */
+
+}
+
+.social-share {
+    width: 656px;
+    height: 400px;
+    color: #FFF;
+    background: 0,url('assets/images/social-networks.jpg');
+    opacity: 1;
+    text-align: start;
+}
+
+.social-share h2{
+    margin: 216px 379px auto 40px;   
+}
+
+.social-share p{
+    margin: 24px 40px 40px 40px;
+    text-align: start;
+    line-height: 24px;
+
+}
+
+.social-share .social-media img{
+    width: 16px;
+    width: 16px;
+}
+
+
+/* ------ PRODUCT PAGE ------*/
+.place-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.order-form,
+.item-viewer {
+    width: 35%;
+}
+
+.item-viewer img{
+    width: 100%;
 }
 
 
