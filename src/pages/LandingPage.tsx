@@ -1,10 +1,17 @@
 import React from 'react'
 import axios from "axios";
-import { Carousel, Grid, Header, List, Nav, Personal } from '../components'
+import { Carousel, Grid, Header, Leagues, List, Nav, Personal } from '../components'
 import Features from '../components/Features'
 
 import reward from '../assets/icons/svg/rewards-badge.svg';
 import Footer from '../components/Footer';
+
+import cl from "../assets/images/country-leagues/champions-league.jpg"
+import europa from "../assets/images/country-leagues/europa-league.jpg"
+import copa from "../assets/images/country-leagues/copa-america.jpg"
+import asiancup from "../assets/images/country-leagues/asian-cup.jpg"
+import caf from "../assets/images/country-leagues/caf.jpg"
+import OtherCollections from '../components/OtherCollections';
 
 const LandingPage = () => {
   const getProducts = () => {
@@ -25,23 +32,23 @@ const LandingPage = () => {
   const leagues = [
     {
       name: "Champions League",
-      imgurl: "../assets/images/country-leagues/champions-league.jpg"
+      imgurl: cl
     },
     {
       name: "Europe League",
-      imgurl: "../assets/images/country-leagues/europa-league.jpg"
+      imgurl: europa
     },
     {
       name: "Copa America",
-      imgurl: "../assets/images/country-leagues/copa-america.jpg"
+      imgurl: copa
     },
     {
       name: "Asia Cup",
-      imgurl: "../assets/images/country-leagues/asian-cup.jpg"
+      imgurl: asiancup
     },
     {
       name: "African Nations Cup",
-      imgurl: "../assets/images/country-leagues/caf.jpg"
+      imgurl: caf
     }
   ]
   return (
@@ -54,8 +61,8 @@ const LandingPage = () => {
         <Features />
         <img className='reward' src={reward} />
         <List title={'MOST POPULAR'} type={'product'} />
-        <List title={'COUNTRY LEAGUE'} type={'league'} data={leagues}/>
-        <Grid />
+        <Leagues title={'COUNTRY LEAGUE'} type={'league'} data={leagues}/>
+        <OtherCollections title={'OTHER COLLECTIONS'} />
         <Personal />
         <Footer />
       </div>

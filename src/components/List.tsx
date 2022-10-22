@@ -10,10 +10,10 @@ const List = (props: any) => {
         <div className='list'>
             <div className='heading'>
                 <h2>{props.title}</h2>
-                <div className='navitagor'>
-                    <div className='button'><img src={left} /></div>
-                    <div className='button'><img src={right} /></div>
-                </div>
+                {/* <div className='navitagor'>
+                    <div className='left-button'><img src={left} /></div>
+                    <div className='right-button'><img src={right} /></div>
+                </div> */}
             </div>
             <div className='content'>
                 {
@@ -24,13 +24,15 @@ const List = (props: any) => {
                             <Product />
                             <Product />
                             <Product />
+                            <Product />
+                            <Product />
                         </> :
                         <>
-                        {/* <League leagues={props.data}/> */}
-                        <League leagues={props.data}/>
-                        <League leagues={props.data}/>
-                        <League leagues={props.data}/>
-                        <League leagues={props.data}/>
+                            {/* <League leagues={props.data}/> */}
+                            <League leagues={props.data} />
+                            <League leagues={props.data} />
+                            <League leagues={props.data} />
+                            <League leagues={props.data} />
 
                         </>
                 }

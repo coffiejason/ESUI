@@ -6,10 +6,10 @@ import { useState } from 'react';
 const League = (props:any) => {
   
 
-  console.log(props.leagues)
+  console.log(props)
   return (
     <div className='league'>
-      {
+      {/* {
         props.leagues.map((item:any) =>{
           <>
             <img src={item.imgurl} />
@@ -17,9 +17,9 @@ const League = (props:any) => {
           </>
 
         })
-      }
-    <img src={league} />
-    <p>League Name</p>
+      } */}
+    <img src={props.url} />
+    <p>{props.name}</p>
 
     </div>
   )

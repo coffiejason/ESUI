@@ -1,6 +1,6 @@
 import React from 'react'
 
-import left from '../assets/icons/svg/left.svg';
+import left from '../assets/icons/svg/left-black.svg';
 import user from '../assets/icons/svg/user.svg';
 import cart from '../assets/icons/svg/shopping-cart.svg';
 import search from '../assets/icons/svg/search.svg';
@@ -12,7 +12,9 @@ const Nav = () => {
         <div className='upper-navbar'>
           <div className='cat-select'>
             <p>All Categories</p>
-            <img src={left} />
+            <div className='pointer'>
+              <img src={left} />
+            </div>
           </div>
           <div className='search-bar-container'>
             <input type={'text'} placeholder='What are you looking for ?' />
@@ -38,17 +40,33 @@ const Nav = () => {
             </div>
 
             <div className='page-section-inactive'>
-              <p>T-Shirts</p>
+              <div className='drop-down'>
+                <p>T-Shirts</p>
+                <div className='pointer'>
+                  <img src={left} />
+                </div>
+              </div>
               <div className='page-underline'></div>
             </div>
 
             <div className='page-section-inactive'>
-              <p>NBA</p>
+              <div className='drop-down'>
+                <p>NBA</p>
+                <div className='pointer'>
+                  <img src={left} />
+                </div>
+              </div>
               <div className='page-underline'></div>
             </div>
 
             <div className='page-section-inactive'>
-              <p>Tracksuits</p>
+
+              <div className='drop-down'>
+                <p>Tracksuits</p>
+                <div className='pointer'>
+                  <img src={left} />
+                </div>
+              </div>
               <div className='page-underline'></div>
             </div>
 
@@ -69,6 +87,16 @@ const Nav = () => {
           </div>
         </div>
 
+      </div>
+      <div className='navbar-mobile'>
+        <div className='menu'>
+
+        </div>
+        <div>
+
+        </div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   )
