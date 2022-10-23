@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from "axios";
 import { Carousel, Grid, Header, Leagues, List, Nav, Personal } from '../components'
 import Features from '../components/Features'
 
@@ -13,21 +12,9 @@ import asiancup from "../assets/images/country-leagues/asian-cup.jpg"
 import caf from "../assets/images/country-leagues/caf.jpg"
 import OtherCollections from '../components/OtherCollections';
 
+
+
 const LandingPage = () => {
-  const getProducts = () => {
-    // axios.get('/user?ID=12345')
-    //   .then(function (response) {
-    //     // handle success
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   })
-    //   .finally(function () {
-    //     // always executed
-    //   });
-  }
 
   const leagues = [
     {

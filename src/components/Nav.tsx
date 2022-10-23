@@ -15,7 +15,15 @@ const Nav = () => {
             <div className='pointer'>
               <img src={left} />
             </div>
+            <div className="cat-select-dropdown-content">
+              <a href="/">Europe League</a>
+              <a href="/">Champions League</a>
+              <a href="/">Copa America</a>
+              <a href="/">Asia Cup</a>
+              <a href="/">African Nations Cup</a>
+            </div>
           </div>
+
           <div className='search-bar-container'>
             <input type={'text'} placeholder='What are you looking for ?' />
             <div className='search-button'>

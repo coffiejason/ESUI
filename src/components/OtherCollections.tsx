@@ -9,7 +9,7 @@ import pro from '../assets/images/other-collections/pro-player.jpg'
 import shorts from '../assets/images/other-collections/shorts.jpg'
 import socks from '../assets/images/other-collections/socks.jpg'
 
-const upper = [
+const data = [
   {
     name: "Kids",
     image: kids
@@ -21,10 +21,7 @@ const upper = [
   {
     name: "Goalkeeper",
     image: goalkeeper
-  }
-]
-
-const lower = [
+  },
   {
     name: "Authentic / Pro Player",
     image: pro
@@ -49,26 +46,16 @@ const OtherCollections = (props: any) => {
             <div className='right-button'><img src={right} /></div>
         </div> */}
       </div>
-      <div className='grid'>
+      <div className='layout'>
         <div className='content'>
           {
-            upper.map((item)=>(
+            data.map((item)=>(
               <div className='image'>
                 <OtherImage label={item.name} image={item.image} />
               </div>
 
             ))
           }
-        </div>
-        <div className='content'>
-          {
-              lower.map((item)=>(
-                <div className='image'>
-                  <OtherImage label={item.name} image={item.image} />
-                </div>
-
-              ))
-            }
         </div>
       </div>
 

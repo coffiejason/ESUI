@@ -5,8 +5,6 @@ import { useState } from 'react';
 
 const League = (props:any) => {
   
-
-  console.log(props)
   return (
     <div className='league'>
       {/* {

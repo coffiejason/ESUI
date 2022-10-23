@@ -14,9 +14,9 @@ const Leagues = (props: any) => {
             </div>
             <div className='content'>
                 {
-                    props.data.map((item:any)=>(
+                    props.data.map((item:any,randnum: any)=>(
                         <>
-                            <League name={item.name} url={item.imgurl} />
+                            <League key={randnum} name={item.name} url={item.imgurl} />
                         </>
                         
                     ))

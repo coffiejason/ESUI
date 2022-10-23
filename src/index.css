@@ -14,6 +14,7 @@ html,body {
 
 .header {
     width: 100%;
+    height: 32px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,6 +66,12 @@ html,body {
 
 .chat_with_us:hover {
     background: #259e3b;
+    cursor: pointer;
+}
+
+.chat_with_us:focus,
+.chat_with_us:active {
+    background: #1c752c;
 }
 
 .chat_with_us img{
@@ -79,6 +86,30 @@ html,body {
     height: 5px;
     margin: auto auto;
 }
+
+.cat-select-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    margin-top: 50px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.cat-select-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.cat-select-dropdown-content a:hover {background-color: #ddd;}
+
+.cat-select:hover .cat-select-dropdown-content {display: block;}
+
 
 /* ------ NAVBAR ------ */
 .navbar-container {
@@ -263,6 +294,10 @@ html,body {
     flex-direction: row;
 }
 
+.page-section-inactive p:hover {
+    color: #ffd900;
+}
+
 .page-section-inactive .drop-down .pointer{
     transform: rotate(270deg);
     width: 8px;
@@ -386,15 +421,19 @@ html,body {
 
 /* ------ FEATURES ------*/
 .features {
-    display: flex;
-    flex-direction: row;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 40px 40px;
+    margin-bottom: 28px;
 }
 
 .feature {
     width: 346px;
     height: 160px;
     background: #FEFAE1;
-    margin: 3.5% 2.5%;
+    margin: 10px 0;
+    /* margin-right: 80px; */
 } 
 
 .feature .top {
@@ -476,23 +515,36 @@ html,body {
 .list .navitagor {
     width: 110px;
     height: 45px;
-    background: #27B03F;
     display: flex;
     flex-direction: row;
+    margin: 80px 80px auto auto;
 }
 
 .list .navitagor .left-button {
-    background: #cbcaca;
-    width: 50px;
-    height: 100%;
+    background: #f4f4f4;
+    width: 40px;
+    height: 40px;
     margin-right: 5px;
+    border: 1px solid #EAEAEC;
 }
 
 .list .navitagor .right-button {
-    background: #cbcaca;
-    width: 50px;
-    height: 100%;
+    background: #f4f4f4;
+    width: 40px;
+    height: 40px;
     margin-left: 5px;
+    border: 1px solid #EAEAEC;
+}
+
+.list .navitagor .right-button:hover,
+.list .navitagor .left-button:hover{
+    background: #e8e8e8;
+
+}
+
+.list .navitagor .right-button:active,
+.list .navitagor .left-button:active{
+    background: #c0bfbf;
 }
 
 .list .navitagor .right-button img,
@@ -510,12 +562,19 @@ html,body {
     width: 0px;
 }
 
-.leagues .heading,
-.leagues .content {
+.leagues .heading{
     display: flex;
     flex-direction: row;
     /* justify-content: space-evenly; */
+    overflow: auto;
 }
+
+.leagues .content {
+    max-width: 1305px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
 
 .leagues H2{
     margin: 0 auto auto 80px;
@@ -580,12 +639,13 @@ html,body {
 
 .collection .heading,
 .collection .content {
-    display: flex;
-    flex-direction: row;
+    max-width: 1352px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     /* justify-content:space-between */
 }
 
-.collection .grid{
+.collection .layout{
     display: flex;
     flex-direction: column;
     margin: 88px auto auto 64px;
@@ -698,7 +758,7 @@ html,body {
     width: 257px;
     height: 289px;
     background: #FFFFFF;
-    margin-right: 15px;
+    margin: auto 20px 32px 0;
 }
 
 .league p{
@@ -717,12 +777,13 @@ html,body {
 
 /* ------ PERSONAL ------ */
 .personal {
-    width: 90%;
-    height: 500px;
+    width: 1353px;
+    height: 560px;
     background: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    margin: 80px 80px 80px 80px;
+    max-width: 1512px;
+    display: grid;
+    grid-template-columns: repeat(2,656px);
+    margin: 80px;
 }
 
 .personalize {
@@ -730,7 +791,6 @@ html,body {
     height: 400px;
     color: #FFF;
     background: 0,url('assets/images/personalization.jpg');
-    margin-right: 40px;
     opacity: 1;
     text-align: start;
 }
@@ -753,6 +813,8 @@ html,body {
     background: 0,url('assets/images/social-networks.jpg');
     opacity: 1;
     text-align: start;
+    margin-left: 40px;
+    
 }
 .social-share .social-icons{
     margin-left: 40px;
@@ -776,8 +838,8 @@ html,body {
 
 /* ------ PRODUCT PAGE ------*/
 .place-order {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     justify-content: center;
 }
 .order-form,
@@ -929,6 +991,15 @@ html,body {
     cursor: pointer;
 }
 
+.order-form .favorite:hover{
+    background: #f7f7f7;
+}
+
+.order-form .favorite:focus,
+.order-form .favorite:active{
+    background: #e9e9e9;
+}
+
 .order-form .favorite img{
     width: 12px;
     height: 11px;
@@ -1012,6 +1083,15 @@ html,body {
 
 }
 
+.order-form form .size input[type="button"]:hover{
+    background: #EAEAEC;
+}
+
+/* .order-form form .size input[type="button"]:focus,
+.order-form form .size input[type="button"]:active{
+    background: #dadada;
+} */
+
 .order-form form .size p{
     font-weight: 600;
     font-size: 12px;
@@ -1091,6 +1171,12 @@ html,body {
     color: #FFF;
 }
 
+.order-form form .size .add-to-cart:focus,
+.order-form form .size .add-to-cart:active{
+    background: #fdd90c;
+    
+}
+
 .order-form form .size .add-to-cart-icon{
     width: 56px;
     height: 56px;
@@ -1137,8 +1223,9 @@ html,body {
 .pre-footer{
     width: 100%;
     height: 480px;
-    display: flex;
-    flex-direction: row;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     border: 1px solid #EAEAEC;
     /* margin-top: 160px; */
 }
@@ -1194,13 +1281,18 @@ html,body {
 .pre-footer-div .subscribe-button{
     width: 40px;
     height: 40px;
-
     background: #F9DC38;
+    cursor: pointer;
+}
+
+.pre-footer-div .subscribe-button:hover{
+    background: #ffe551;
 
 }
 
-.pre-footer-div .subscribe-button{
-    cursor: pointer;
+.pre-footer-div .subscribe-button:focus,
+.pre-footer-div .subscribe-button:active{
+    background: #feda0e;
 }
 
 .pre-footer-div .subscribe-button img{
@@ -1211,8 +1303,10 @@ html,body {
     width: 100%;
     height: 80px;
     background: #fff;
-    display: flex;
-    flex-direction: row;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
 }
 
 .footer p{
@@ -1267,11 +1361,60 @@ html,body {
 
 
 @media only screen and (max-width: 700px) {
-    /* For mobile phones: */
-    .header{
-        display: none;
+
+    .header p {
+        margin: auto 0;
+        /* font-weight: 600;
+        font-size: 11px; */
     }
 
+    .feature {
+        width: 90%;
+        height: 180px;
+        margin: 0;
+        margin: 20px 12px;
+    } 
+
+    .features {
+        grid-template-columns: repeat(2,1fr);
+        margin: 0;
+    }
+
+    .list h2{
+        margin-left: 16px;
+    }
+
+    .list .content{
+        margin: 88px auto auto 16px;
+    }
+
+    .leagues h2{
+        margin-left: 10px;
+        margin-bottom: 24px;
+
+    }
+
+    .league {
+        width: 189.13px;
+        /* margin: 0 0 32px 0;
+        padding: 0 8.57px; */
+        margin: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .league img{
+        width: 189.13px;
+        height: 189.13px;
+
+    }
+
+    .leagues .content {
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 0;
+    }
+    
     .navbar{
         display: none;     
     }
@@ -1281,19 +1424,136 @@ html,body {
         border-bottom: 1px solid #EAEAEC;
     }
 
+    .other-image {
+        width: 168px;
+        height: 168px;
+        /* background: url(); */
+        margin: 0;
+    }
+
+    .other-image img{
+        width: 168px;
+        height: 168px;
+        /* background: url(); */
+    }
+
+    .other-image .under-blur{
+        width: 168px;
+    }
+
+    .collection {
+        margin: 0;
+        padding: 0;
+    }
+
+    .collection .heading,
+    .collection h2{
+        margin: 0;
+    }
+
+    .collection .layout{
+        margin: 0;
+    }
+
+    .collection .content {
+        grid-template-columns: repeat(2,1fr);
+        margin: 0;
+    }
+
+    .personal {
+        width: 80%;
+        grid-template-columns: 1fr;
+        margin: 0 16px;
+
+    }
+
+    .personalize h2,
+    .social-share h2{
+        margin: 0;   
+    }
+    
+    .personalize p,
+    .social-share p{
+        margin: 0;
+        /* line-height: 24px; */
+    
+    }
+
+    .personalize,
+    .social-share {
+        width: 358px;
+        height: 218.29px;
+        margin: 0;
+        /* ma: 0 16px; */
+    }
+
+    .pre-footer{
+        width: 100%;
+        grid-template-columns: 1fr;
+        height: auto;
+        width: 100%;
+        margin: 0;
+        
+    }
+
+    .pre-footer-div{
+        margin: 0;
+        margin-left: 16px;
+        margin-bottom: 40px;
+    }
+
+    .footer {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+    }
+
 
 
     .carousel {
-        width: 70%;
+        width: 100%;
     }
 
     .carousel h2{
         text-align: left;
     }
 
-    .carousel .hero-buttons {
-        /* width: 500px; */
+    .carousel h2{
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 48px;
+        margin: 24px auto 190px 24px;
+        /* or 120% */
+        line-height: 32px;
+        /* or 133% */
+        
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
     }
+
+    .carousel .hero-buttons {
+        width: 100%;
+    }
+
+    .carousel .nav-buttons{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        margin: 20px auto auto 24px
+    }
+
+    .place-order {
+        grid-template-columns: 1fr;
+    }
+
+    .order-form,
+    .item-viewer {
+        width: 65%;
+        margin: 0;
+        padding-left: 10%;    
+    }
+
 }
 
 
