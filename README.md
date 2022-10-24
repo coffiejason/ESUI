@@ -1,7 +1,7 @@
 
 # UI DESIGN TEST
 
-A design test based a figma design from ES
+A design test based on a figma design from ES
 
 
 ## Product Page Screenshot
