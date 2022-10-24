@@ -4,12 +4,12 @@
 A design test based a figma design from ES
 
 
-## Product Page
+## Product Page Screenshot
 
-![App Screenshot](assets/images/screenshot.png)
+![App Screenshot](src/assets/images/screenshot.png)
 
-## Home Page
-![App Screenshot](assets/images/screenshot1.png)
+## Home Page Screenshot
+![App Screenshot](src/assets/images/screenshot1.png)
 
 
 ## Demo
