@@ -6,10 +6,10 @@ A design test based a figma design from ES
 
 ## Product Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](assets/images/screenshot.png)
 
 ## Home Page
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](assets/images/screenshot1.png)
 
 
 ## Demo
