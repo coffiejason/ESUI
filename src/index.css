@@ -23,7 +23,7 @@ html,body {
 }
 
 .header p {
-    margin: 8px 0;
+    margin: auto 0;
     font-weight: 600;
     font-size: 11px;
 }
@@ -459,14 +459,16 @@ html,body {
 .feature .icon-front{
     width: 40px;
     height: 40px;
-    left: 32px;
+    /* left: 32px;
     top: 32px;
-    margin: 0 auto 0 0;
+    margin: 0 0 0 0; */
     background: #F8D307;
 }
 
 .feature .icon-front img{
-    margin: 12px 0;
+    width: 22px;
+    height: 16px;
+    margin: 9px 0;
 }
 
 .feature h4{
@@ -560,6 +562,7 @@ html,body {
 
 ::-webkit-scrollbar {
     width: 0px;
+    display: none;
 }
 
 .leagues .heading{
@@ -691,7 +694,7 @@ html,body {
 
 .product .img-div .save-percentage {
     width: 63px;
-    height: auto;
+    height: 24px;
     left: 16px;
     margin: -60px auto 0 0px;
     background: #23C353;
@@ -699,10 +702,11 @@ html,body {
     z-index: 10;
 }
 
-.product .img-div p{
+.product .img-div .save-percentage p{
     color: #fff;
     font-weight: 600;
     font-size: 10px;
+    padding-top: 6px;
 }
 
 .product-details {
@@ -1253,6 +1257,7 @@ html,body {
     /* identical to box height, or 143% */
     text-align: start;
     color: #111112;
+    cursor: pointer;
 
 }
 
@@ -1418,10 +1423,91 @@ html,body {
     .navbar{
         display: none;     
     }
+    .navbar-mobile{
+        display: block;
+    }
+
+    .navbar-mobile .menu{
+        margin-left: 1rem;
+        position: relative;
+    }
+
+    .menu-container{
+        display: flex;
+        justify-content: flex-start;
+        background: #fff;
+        align-items: flex-start;
+        flex-direction: column;
+        text-align: end;
+
+        padding: 2rem;
+        position: absolute;
+        top:40px;
+        left: 0;
+        margin-top: 1rem;
+        min-width: 210px;
+        box-shadow: 0 0 5 rgba(0,0,0,0.2);
+    }
+    .menu-container a{
+        color: #111112;
+        text-decoration: none;
+    }
+
+
 
     .navbar-container{
         background: #fff;
         border-bottom: 1px solid #EAEAEC;
+        display: flex;
+        flex-direction: row;
+
+
+    }
+
+    .navbar-container .menu{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    .navbar-container .menu-container{
+        cursor: pointer;
+    }
+    .navbar-container .menu-icon{
+        cursor: pointer;
+        margin:  auto 0 0 0;
+    }
+
+    .navbar-container .menu .search-icon{
+        /* margin-left: 31.46px; */
+        width: 17.09px;
+        height: 18px;
+        margin: auto auto auto 31.46px;
+        cursor: pointer;
+    }
+
+    .navbar-container .menu .cart-icon{
+        /* margin-left: 31.46px; */
+        width: 20px;
+        height: 20px;
+        margin: auto 28px auto auto;
+        cursor: pointer;
+    }
+
+    .navbar-container .menu .profile-icon{
+        /* margin-left: 31.46px; */
+        width: 20px;
+        height: 20px;
+        margin: auto 6px auto 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .menu .dropdown-icon{
+        transform: rotate(270deg);
+        width: 8px;
+        height: 5px;
+        margin: auto 20px auto 0;
+        cursor: pointer;
+
     }
 
     .other-image {
@@ -1543,6 +1629,10 @@ html,body {
         margin: 20px auto auto 24px
     }
 
+    .history{
+        margin: 16px auto 24px 16px;
+    }
+
     .place-order {
         grid-template-columns: 1fr;
     }
@@ -1550,8 +1640,7 @@ html,body {
     .order-form,
     .item-viewer {
         width: 65%;
-        margin: 0;
-        padding-left: 10%;    
+        margin: 0 auto 0 17%;   
     }
 
 }

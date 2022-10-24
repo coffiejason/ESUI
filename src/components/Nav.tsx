@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
 
 import left from '../assets/icons/svg/left-black.svg';
 import user from '../assets/icons/svg/user.svg';
 import cart from '../assets/icons/svg/shopping-cart.svg';
 import search from '../assets/icons/svg/search.svg';
+import search_dark from '../assets/icons/svg/search-dark.svg';
+
+const Menu = () => (
+  <>
+    <p><a href='#home'>Home</a></p>
+    <p><a href='#tshirts'>T shirts</a></p>
+    <p><a href='#nba'>NBA</a></p>
+    <p><a href='#review'>Reviews</a></p>
+  </>
+)
 
 const Nav = () => {
+  const [toggleMenu, setToggleMenu] = useState(false)
   return (
     <div className='navbar-container'>
       <div className='navbar'>
@@ -96,9 +109,22 @@ const Nav = () => {
         </div>
 
       </div>
-      <div className='navbar-mobile'>
+      <div className='navbar-mobile scale-up-center'>
         <div className='menu'>
+          {toggleMenu ? <RiCloseLine color='#111112' size={27} onClick={() => setToggleMenu(false)} />
+            : <RiMenuLine color='#111112' size={27} onClick={() => setToggleMenu(true)} />
+          }
 
+          {toggleMenu && (
+            <div className='menu-container'>
+              <Menu />
+            </div>
+
+          )}
+          <img className='search-icon' src={search_dark} alt={'search-icon'} />
+          <img className='cart-icon' src={cart} alt={'cart-icon'} />
+          <img className='profile-icon' src={user} alt={'profile-icon'} />
+          <img className='dropdown-icon' src={left} alt={'dropdown-icon'} />
         </div>
         <div>
 

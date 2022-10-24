@@ -26,40 +26,30 @@ const api = axios.create({
   baseURL: `https://camiestas-futbol.effectstudios.co/api/v1/banner`
 })
 
-let bannersraw = null
+const handleClick = (e:any) =>{
 
-let banners: any[] = []
+    
+  e.target.className === 'inactive' ?  e.target.className = 'active' : e.target.className = 'inactive'
 
+  activeId[0] = e.target.id
 
+  console.log(activeId)
 
+}
 
+let banners: any[] = [{
+  id: '00000',
+  content: 'Your favourite customized',
+  image: '',
+  btn_text: 'Shop now',
+  link: ''
+}]
 
 const carousel = () => {
 
-  let [btn_text,setBtnText] = useState('Shop now')
-  let [title_text,setTitle_Text] = useState('')
-  let [bannerss,setBannerss] = useState([{'':''}])
-
-  const changeTexts = () =>{
-    console.log("hello")
-    // banners.map((item)=>{
-    //   console.log("1")
-    //   setTimeout(function() {
-    //     setBtnText(item.btn_text)
-    //     setTitle_Text(item.content)
-    //     console.log(item)
-    //   }, 1000);
-  
-    // })
-  
-  }
-
   useEffect(()=>{
     api.get('/').then(res =>{
-      
-      bannersraw = res.data.banners
-
-      bannersraw.data.map((item:any)=>{
+      res.data.banners.data.map((item:any)=>{
         banners.push(
           {
             id: item.id,
@@ -69,31 +59,14 @@ const carousel = () => {
             link: item.link
           }
         )
-        //console.log(item)
       })
-
-      setBannerss(banners)
-      console.log(banners)
-
     })
   },[])
   
-  const handleClick = (e:any) =>{
 
-    //lightsOut
-
-    changeTexts
-    
-    e.target.className === 'inactive' ?  e.target.className = 'active' : e.target.className = 'inactive'
-
-    activeId[0] = e.target.id
-
-    console.log(activeId)
-
-  }
   return (
     <div className='carousel'>
-      <h2>Your favorite customized <span>Club Jerseys.</span></h2>
+      <h2>{banners[0].content} <span>Club Jerseys.</span></h2>
       <div className='hero-buttons'>
         <div className='nav-buttons'>
           <div className={'inactive'} /*ref={useRef1}*/ id={'1'} onClick={(e)=>handleClick(e)}></div>
@@ -103,7 +76,7 @@ const carousel = () => {
           <div className={'inactive'} /*ref={useRef5}*/ id={'5'} onClick={(e)=>handleClick(e)}></div>
         </div>
         <div className='shop-now-button'>
-          <p>{btn_text}</p>
+          <p>{banners[0].btn_text}</p>
           <div className='shop-now-icon'>
             <img src={bag} />
           </div>
