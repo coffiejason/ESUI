@@ -17,6 +17,7 @@ const api = axios.create({
 
 
 let i = 0
+
 let refArr: any[] = []
 
 const carousel = () => {
@@ -26,37 +27,18 @@ const carousel = () => {
   });
 
   const [active, setActive] = useState({ id: '00000', content: 'Your favourite customize', image: '', btn_text: 'Shop now', link: '' })
+  const [activeBar,setActiveBar] = useState('inactive')
+  const [barClicked, setBarClicked] = useState('')
 
 
   useEffect(()=>{
-    refArr = []
-    bannersState.map(()=>{
-      //refArr.push(useRef(null))
-    })
-
-  },[bannersState])
-
-
-
-  const lightsOut = () =>{
-
-    console.log('here')
-    refArr.map((item)=>{
-      console.log(item.current.className )
-      item.current.className = 'inactive';
-      console.log(item.current.className )
-    })
-    
-  }
+    setActiveBar('inactive')
+  },[barClicked])
 
   const handleClick = (e: any) => {
-
-    lightsOut
-    e.target.className === 'inactive' ? e.target.className = 'active' : e.target.className = 'inactive'
-
+    setBarClicked(e)
     activeId[0] = e.target.id
-
-    console.log(activeId)
+    e.target.className === 'inactive' ? e.target.className = 'active' :  e.target.className = 'inactive'
 
   }
 
@@ -100,7 +82,7 @@ const carousel = () => {
             {
               bannersState.map((item,index)=>(
                 <>
-                  <div className={'inactive'} id={String(index)} onClick={(e) => handleClick(e)}></div>
+                  <div className={activeBar} id={String(index)} onClick={(e) => handleClick(e)}></div>
                 </>
               ))
             }
