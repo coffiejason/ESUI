@@ -23,22 +23,19 @@ let refArr: any[] = []
 const carousel = () => {
 
   const [bannersState, setBannersState] = useState(() => {
-    return [{ id: '00000', content: 'Your favourite customize Club Jerseys.', image: '', btn_text: 'Shop now', link: '' }]
+    return [{ id: '00000', content: 'Your favourite customize Club Jerseys.', image: '', btn_text: 'Shop now', link: '', bar_num: 0 }]
   });
 
   const [active, setActive] = useState(bannersState[0])
-  const [activeBar,setActiveBar] = useState('inactive')
+  const [activeBar,setActiveBar] = useState(false)
   const [barClicked, setBarClicked] = useState('')
 
 
-  useEffect(()=>{
-    setActiveBar('inactive')
-  },[barClicked])
-
   const handleClick = (e: any) => {
-    setBarClicked(e)
+    setActiveBar(false)
     activeId[0] = e.target.id
     e.target.className === 'inactive' ? e.target.className = 'active' :  e.target.className = 'inactive'
+    // console.log(e.target.className)
 
   }
 
@@ -46,10 +43,11 @@ const carousel = () => {
 
     let len = bannersState.length - 1
 
+    bannersState[i].bar_num = i
 
     setActive(bannersState[i])
     len > i ? i++ : i = 0
-    console.log(i)
+    //console.log(i)
   }
 
 
@@ -81,7 +79,7 @@ const carousel = () => {
             {
               bannersState.map((item,index)=>(
                 <>
-                  <div className={activeBar} id={String(index)} onClick={(e) => handleClick(e)}></div>
+                  <div className={index == active.bar_num ? 'active' : 'inactive'} id={String(index)} onClick={(e) => handleClick(e)}></div>
                 </>
               ))
             }
