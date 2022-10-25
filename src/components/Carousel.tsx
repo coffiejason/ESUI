@@ -31,11 +31,13 @@ const carousel = () => {
   const [barClicked, setBarClicked] = useState('')
 
 
-  const handleClick = (e: any) => {
-    setActiveBar(false)
-    activeId[0] = e.target.id
-    e.target.className === 'inactive' ? e.target.className = 'active' :  e.target.className = 'inactive'
+  const handleClick = (e: any,index:any) => {
+    // setActiveBar(false)
+    // activeId[0] = e.target.id
+    // e.target.className === 'inactive' ? e.target.className = 'active' :  e.target.className = 'inactive'
     // console.log(e.target.className)
+
+    setActive(bannersState[index])
 
   }
 
@@ -79,7 +81,7 @@ const carousel = () => {
             {
               bannersState.map((item,index)=>(
                 <>
-                  <div className={index == active.bar_num ? 'active' : 'inactive'} id={String(index)} onClick={(e) => handleClick(e)}></div>
+                  <div className={index == active.bar_num ? 'active' : 'inactive'} id={String(index)} onClick={(e) => handleClick(e,index)}></div>
                 </>
               ))
             }
