@@ -1,15 +1,15 @@
 
 # UI DESIGN TEST
 
-A design test based a figma design from ES
+A design test based on a figma design from ES
 
 
-## Product Page
+## Product Page Screenshot
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](src/assets/images/screenshot1.png)
 
-## Home Page
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+## Home Page Screenshot
+![App Screenshot](src/assets/images/screenshot.png)
 
 
 ## Demo
