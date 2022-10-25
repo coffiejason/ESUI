@@ -5,20 +5,13 @@ import axios from 'axios'
 import bag from '../assets/icons/svg/bag.svg';
 import hero from '../assets/images/hero.jpg'
 
-let activeId = ['1'];
-
-
 
 
 const api = axios.create({
   baseURL: `https://camiestas-futbol.effectstudios.co/api/v1/banner`
 })
 
-
-
 let i = 0
-
-let refArr: any[] = []
 
 const carousel = () => {
 
@@ -27,18 +20,10 @@ const carousel = () => {
   });
 
   const [active, setActive] = useState(bannersState[0])
-  const [activeBar,setActiveBar] = useState(false)
-  const [barClicked, setBarClicked] = useState('')
 
 
   const handleClick = (e: any,index:any) => {
-    // setActiveBar(false)
-    // activeId[0] = e.target.id
-    // e.target.className === 'inactive' ? e.target.className = 'active' :  e.target.className = 'inactive'
-    // console.log(e.target.className)
-
     setActive(bannersState[index])
-
   }
 
   const changeActive = () => {
@@ -49,7 +34,6 @@ const carousel = () => {
 
     setActive(bannersState[i])
     len > i ? i++ : i = 0
-    //console.log(i)
   }
 
 
