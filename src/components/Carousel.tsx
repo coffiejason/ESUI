@@ -26,7 +26,7 @@ const carousel = () => {
     return [{ id: '00000', content: 'Your favourite customize Club Jerseys.', image: '', btn_text: 'Shop now', link: '' }]
   });
 
-  const [active, setActive] = useState({ id: '00000', content: 'Your favourite customize', image: '', btn_text: 'Shop now', link: '' })
+  const [active, setActive] = useState(bannersState[0])
   const [activeBar,setActiveBar] = useState('inactive')
   const [barClicked, setBarClicked] = useState('')
 
@@ -42,7 +42,7 @@ const carousel = () => {
 
   }
 
-  const changeActive = (banners: any[]) => {
+  const changeActive = () => {
 
     let len = bannersState.length - 1
 
@@ -56,13 +56,12 @@ const carousel = () => {
   useEffect(() => {
     api.get('/').then(res => {
       setBannersState(res.data.banners.data);
-      console.log(bannersState);
     })
   },[])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      changeActive(bannersState)
+      changeActive()
     }, 5 * 1000);
 
     return () => clearInterval(interval);
