@@ -219,6 +219,12 @@ html,body {
     background: #fae153;
     cursor: pointer;
 }
+
+.upper-navbar .search-bar-container .search-button:focus,
+.upper-navbar .search-bar-container .search-button:active{
+    background: #fdd90c;
+    
+}
 .upper-navbar .search-bar-container .search-button p {
     margin: auto auto;
     font-weight: 600;
@@ -259,7 +265,6 @@ html,body {
     height: 20px;
     margin: 16px 0;
 }
-
 /* ------ LOWER NAVBAR ------ */
 .lower-navbar .submenu {
     width: 55%;
@@ -340,6 +345,13 @@ html,body {
     letter-spacing: -0.04em;
     color: #FFFFFF;
 }
+.carousel h2:first-letter {
+    text-transform: uppercase;
+}
+
+.carousel h2::last-word {
+    color: #FADD18;
+}
 
 .carousel span{
     color: #FADD18;
@@ -350,11 +362,16 @@ html,body {
 .carousel .hero-buttons {
     display: flex;
     flex-direction: row;
+    position: absolute;
+    width: 95%;
+    margin: 250px auto 10px auto;
+    /* padding-right: 100px; */
 }
 
 .carousel .nav-buttons{
     width: 60%;
     display: flex;
+    position: absolute;
     flex-direction: row;
     margin: 20px auto auto 80px
 }
